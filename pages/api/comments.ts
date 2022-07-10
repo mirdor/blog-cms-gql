@@ -15,7 +15,7 @@ export default async function comments(
   res: NextApiResponse<Data>
 ) {
   const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || "";
-  const graphcmsToken = process.env.GRAPHCMS_DEV_TOKEN || "";
+  const graphcmsToken = process.env.NEXT_PUBLIC_GRAPHCMS_DEV_TOKEN || "";
 
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
