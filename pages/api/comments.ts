@@ -6,9 +6,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { GraphQLClient, gql } from "graphql-request";
 
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || "";
-const graphcmsToken = process.env.GRAPHCMS_DEV_TOKEN || "";
-
 type Data = {
   name: string;
 };
@@ -17,7 +14,8 @@ export default async function comments(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log({ graphcmsToken });
+  const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || "";
+  const graphcmsToken = process.env.GRAPHCMS_DEV_TOKEN || "";
 
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {

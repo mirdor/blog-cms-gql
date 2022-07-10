@@ -1,5 +1,4 @@
 import "../styles/globals.scss";
-import { useEffect, useState } from "react";
 import { Layout } from "../components";
 
 import type { AppProps } from "next/app";
